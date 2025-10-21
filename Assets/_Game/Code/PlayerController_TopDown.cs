@@ -7,11 +7,12 @@ public class PlayerController_TopDown : MonoBehaviour
     
     private Rigidbody2D rb;
     private Vector2 moveInput;
+
+
     
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        
+        rb = GetComponent<Rigidbody2D>();        
     }
     
     void Update()
@@ -23,11 +24,15 @@ public class PlayerController_TopDown : MonoBehaviour
         // Normalise diagonal movement
         moveInput.Normalize();
     }
-    
+
     void FixedUpdate()
     {
         // Move using Rigidbody2D.MovePosition
         Vector2 newPosition = rb.position + moveInput * moveSpeed * Time.fixedDeltaTime;
         rb.MovePosition(newPosition);
     }
+
+
+
+
 }
