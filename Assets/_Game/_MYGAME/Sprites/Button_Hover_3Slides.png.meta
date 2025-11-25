@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 260c8f0f6aff2dd4c9232b7f27aaa64e
+guid: cebbbebd3de377b4da3f1fd3edb08573
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6053722968521005444
-    second: Banner_Vertical_0
+      213: -9173437598748476237
+    second: Button_Hover_3Slides_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +52,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 64
-  spriteBorder: {x: 57, y: 60, z: 58, w: 45}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -74,8 +74,8 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 0
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Banner_Vertical_0
+      name: Button_Hover_3Slides_0
       rect:
         serializedVersion: 2
-        x: 35
-        y: 29
-        width: 122
-        height: 133
+        x: 6
+        y: 7
+        width: 180
+        height: 57
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c76aeacb80bdcfba0800000000000000
-      internalID: -6053722968521005444
+      spriteID: 3bc726d5b1761b080800000000000000
+      internalID: -9173437598748476237
       vertices: []
       indices: 
       edges: []
@@ -126,7 +126,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Banner_Vertical_0: -6053722968521005444
+      Button_Hover_3Slides_0: -9173437598748476237
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
