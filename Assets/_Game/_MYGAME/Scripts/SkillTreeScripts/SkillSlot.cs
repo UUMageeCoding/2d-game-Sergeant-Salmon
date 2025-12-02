@@ -2,15 +2,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
+using System.Collections.Generic;
 
 public class SkillSlot : MonoBehaviour
 {
 
-    public SkillSO skillSO;
+    public List<SkillSlot> prerequisiteSkillSlots;
     public int currentLevel;
     public bool isUnlocked;
+
+    public SkillSO skillSO;
     public Image skillIcon;
+    public Button skillButton;
     public TMP_Text skillLevelText;
+    public static event Action<SkillSlot> OnAbilityPointSpent;
+    public static event Action<SkillSlot> OnSkillMaxed;
 
 
 
@@ -22,18 +29,58 @@ public class SkillSlot : MonoBehaviour
             UpdateUI();
         }
     }
+
+
+    public void TryUpgradeSkill()
+    {
+        if (isUnlocked && currentLevel < skillSO.maxLevel)
+        {
+            currentLevel++;
+            OnAbilityPointSpent?.Invoke(this);
+
+            if (currentLevel >= skillSO.maxLevel)
+            {
+                OnSkillMaxed?.Invoke(this);
+            }
+
+            UpdateUI();
+
+        }
+    }
     
+    
+
+    public bool CanUnlockSkill()
+    {
+        foreach (SkillSlot slot in prerequisiteSkillSlots)
+        {
+            if(!slot.isUnlocked || slot.currentLevel < slot.skillSO.maxLevel)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void Unlock()
+    {
+        isUnlocked = true;
+        UpdateUI();
+    }
+
 
     private void UpdateUI()
     {
         skillIcon.sprite = skillSO.skillIcon;
         if (isUnlocked)
         {
+            skillButton.interactable = true;
             skillLevelText.text = currentLevel.ToString() + "/" + skillSO.maxLevel.ToString();
             skillIcon.color = Color.white;
         }
         else
         {
+            skillButton.interactable = false;
             skillLevelText.text = "Locked";
             skillIcon.color = Color.gray;
         }

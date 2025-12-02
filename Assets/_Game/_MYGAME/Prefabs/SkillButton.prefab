@@ -211,10 +211,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69088c38f563aba4e974fd4b93ff419d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillSO: {fileID: 0}
   currentLevel: 3
   isUnlocked: 1
+  skillSO: {fileID: 0}
   skillIcon: {fileID: 864115877529739967}
+  skillButton: {fileID: 9013969339657151111}
   skillLevelText: {fileID: 2265938089126373647}
 --- !u!1 &5489869785567613375
 GameObject:
