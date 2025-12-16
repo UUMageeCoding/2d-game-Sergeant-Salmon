@@ -10,11 +10,16 @@ public class Player_Combat : MonoBehaviour
     public Animator anim;
     public float cooldown = 1;
     public StatsUI statsUI;
+
+    [SerializeField] private  AudioClip[] enemyHurtSounds;
+    
     
 
     private float timer;
 
 
+
+    
     private void Update()
     {
         if (timer > 0)
@@ -49,6 +54,8 @@ public class Player_Combat : MonoBehaviour
             {
             enemies[0].GetComponent<Enemy_Health>().Changehealth(-StatsManager.Instance.damage);
             enemies[1].GetComponent<Enemy_Knockback>().Knockback(transform, StatsManager.Instance.knockbackForce, StatsManager.Instance.knockbackTime, StatsManager.Instance.stunTime);
+            //SoundEffectsManager.instance.PlaySoundEffectsClip(enemyHurtSound, transform, 1f)
+            SoundEffectsManager.instance.PlayRandomSoundEffectsClip(enemyHurtSounds, transform, 1f);
             }
     }
     

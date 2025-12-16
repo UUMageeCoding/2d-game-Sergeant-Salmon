@@ -1,3 +1,4 @@
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class SkillManager : MonoBehaviour
@@ -23,6 +24,7 @@ public class SkillManager : MonoBehaviour
         {
             case "Max Health Boost":
                 StatsManager.Instance.UpdateMaxHealth(1);
+                GetComponent<PlayerHealth>().ChangeHealth(2);
                 break;
 
             case "Damage Boost":

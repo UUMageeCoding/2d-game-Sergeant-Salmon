@@ -9,6 +9,7 @@ public class Enemy_Health : MonoBehaviour
     public static event MonsterDefeated OnMonsterDefeated;
     public int currentHealth;
     public int maxHealth;
+    public GameWin gameWin;
 
 
 
@@ -31,6 +32,7 @@ public class Enemy_Health : MonoBehaviour
         {
             OnMonsterDefeated(expReward);
             Destroy(gameObject);
+            GameWin.destroyedEnemies++; // This adds to the variable “destroyedEnemies” in the “GameWinner” script.
         }
 
     }

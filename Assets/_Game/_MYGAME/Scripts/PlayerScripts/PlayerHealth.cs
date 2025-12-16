@@ -8,6 +8,9 @@ public class PlayerHealth : MonoBehaviour
 
     public TMP_Text healthText;
     public Animator healthTextAnim;
+    public GameOver gameOver;
+    [SerializeField] private  AudioClip[] playerHurtSounds;
+    [SerializeField] private  AudioClip playerDeathSound;
 
     private void Start()
     {
@@ -18,11 +21,18 @@ public class PlayerHealth : MonoBehaviour
         StatsManager.Instance.currentHealth += amount;
         healthTextAnim.Play("TextUpdate");
         healthText.text = "HP: " + StatsManager.Instance.currentHealth + " / " + StatsManager.Instance.maxHealth;
-
+        SoundEffectsManager.instance.PlayRandomSoundEffectsClip(playerHurtSounds, transform, 1f);
 
         if (StatsManager.Instance.currentHealth <= 0)
         {
+            SoundEffectsManager.instance.PlaySoundEffectsClip(playerDeathSound, transform, 1f);
             gameObject.SetActive(false);
+            Death();
         }
+    }
+
+    private void Death()
+    {
+       gameOver.Setup(); 
     }
 }
